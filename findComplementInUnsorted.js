@@ -1,6 +1,6 @@
 'use strict'
 
-var testData  = [3, 8, 12, 13, 21, 22, 27, 40, 47, 64, 95];
+var testData  = [64, 22, 8, 12, 27, 13, 21, 40, 47, 95, 3];
 var targetNum = 30;
 var findPairs = function(arr, target) {
       var qualifiedPairs = [];
