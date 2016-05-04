@@ -4,9 +4,8 @@ var testData  = [3, 8, 12, 13, 21, 22, 27, 40, 47, 64, 95];
 var targetNum = 30;
 var findPairs = function(arr, target) {
       var qualifiedPairs = [];
-      var arrLen = arr.length;
       var leftPointer = 0;
-      var rightPointer = arrLen - 1;
+      var rightPointer = arr.length - 1;
 
       while (leftPointer < rightPointer){
         var pairSum = arr[leftPointer] + arr[rightPointer];
