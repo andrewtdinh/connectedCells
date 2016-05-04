@@ -1,11 +1,11 @@
 'use strict'
 
-var data = "5
-5
-0 1 0 1 1
-1 1 0 1 0
-0 1 0 0 1
-0 0 0 0 1
+var data = "5\n\
+5\n\
+0 1 0 1 1\n\
+1 1 0 1 0\n\
+0 1 0 0 1\n\
+0 0 0 0 1\n\
 1 1 0 1 0";
 
 function processData(input) {
