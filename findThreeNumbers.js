@@ -20,6 +20,7 @@ var findPairs = function(arr, target) {
 var findThrees = function(arr, target){
   var pointer = 0;
   var endSearch = arr.length - 2;
+  var qualifiedTriples = [];
   while(pointer < endSearch){
     var testItem = arr[pointer];
     var subArray = arr.slice(pointer + 1);
@@ -27,12 +28,12 @@ var findThrees = function(arr, target){
     if (pairsFound.length > 0){
       pairsFound.forEach(function(pair){
         pair.push(testItem);
-        console.log(pair);
+        qualifiedTriples.push(pair);
       });
     }
     ++pointer;
-
   }
+  return qualifiedTriples;
 }
 
-findThrees(testData, targetNum);
+console.log(findThrees(testData, targetNum));
