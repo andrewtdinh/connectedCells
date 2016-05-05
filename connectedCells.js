@@ -15,30 +15,42 @@ function processData(input) {
   matrix = {},
   uncheckedCells = [];
   //Generating the matrix object
-  for(var i=0; i < rows.length; i++){
+  for (var i=0; i < rows.length; i++){
     var cells = rows[i].split(' ');
-    for(var j=0; j < cells.length; j++){
-      matrix['' + j + i] = {value: cells[j], counted: false};
+    for (var j=0; j < cells.length; j++){
+      matrix['' + j + i] = {value: cells[j], unCounted: true};
       uncheckedCells.push('' + j + i);
     }
   }
   function findUncountedFilledNeighbors(cellLoc){
     var qualifiedCells = [];
-    var leftBound = cellLoc[0] - 1 >= 0 ? cellLoc[0] - 1 : cellLoc[0];
-    var rightBound = cellLoc[0] + 1 < c ? cellLoc[0] + 1 : cellLoc[0];
-    var leftBound = cellLoc[1] - 1 >= 0 ? cellLoc[1] - 1 : cellLoc[1];
-    var rightBound = cellLoc[1] + 1 < r ? cellLoc[1] + 1 : cellLoc[1];
-
+    var x = cellLoc[0] * 1, y = cellLoc[1] * 1;
+    var leftBound = x - 1 >= 0 ? x - 1 : x;
+    var rightBound = x + 1 < c ? x + 1 : x;
+    var upBound = y - 1 >= 0 ? y - 1 : y;
+    var downBound = y + 1 < r ? y + 1 : y;
+    console.log('c: ' + c)
+    console.log('cellLoc[0]: ' + cellLoc[0]);
+    console.log('lb, rb: ' +leftBound+ ', ' +rightBound);
+    console.log('ub, db: ' +upBound+ ', ' +downBound);
+    for (var i=upBound; i<=downBound; i++){
+      for (var j=leftBound; j<=rightBound; j++){
+        var xy = '' + j + i;
+        if (matrix[xy] !== cellLoc && matrix[xy].value === 1 && matrix[xy].unCounted){qualifiedCells.push[xy];}
+      }
+    }
+    return qualifiedCells;
   }
-  function expand(cellLoc){
-    var currentMax = 0;
-    if (matrix[cellLoc].value )
-  }
+  // function expand(cellLoc){
+  //   var currentMax = 0;
+  //   if (matrix[cellLoc].value )
+  // }
 
   //Pass in an array of unchecked cells.  It just walk through the array one at a time.
-  function countIt(arr)
+  // function countIt(arr)
   console.log(matrix);
   console.log('uncheckedCells: ' + uncheckedCells);
+  console.log(findUncountedFilledNeighbors('11'));
 }
 
 processData(data);
