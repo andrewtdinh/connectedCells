@@ -16,13 +16,20 @@ var findPairs = function(arr, target) {
     }
 
 var findThrees = function(arr, target){
-  var arrLen = arr.length;
-  while(arr.length > 2){
-    var testItem = arr.shift();
-    console.log('testItem: ' +testItem+ "---> arr: " +arr);
-    if (findPairs(arr, target - testItem).length > 0){
-      console.log('found one trio');
+  var pointer = 0;
+  while(pointer < arr.length){
+    var testItem = arr[pointer];
+    var subArray = arr.slice();
+    subArray.splice(pointer, 1);
+    // console.log('testItm: ' +testItem+ "---> arr: " +subArray);
+    var pairsFound = findPairs(subArray, target - testItem);
+    if (pairsFound.length > 0){
+      pairsFound.forEach(function(pair){
+        console.log(pair);
+      });
+      //console.log('Pairs found:  ' +pairsFound);
     }
+    pointer++;
   }
 }
 
