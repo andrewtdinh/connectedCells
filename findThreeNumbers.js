@@ -15,11 +15,12 @@ var findPairs = function(arr, target) {
       return qualifiedPairs;
     }
 
-var findThrees = function(tArray, target){
-  while(tArray.length > 2){
-    var testItem = tArray.shift();
-    console.log('testItem: ' +testItem+ "---> tArray: " +tArray);
-    if (findPairs(tArray, target - testItem).length > 0){
+var findThrees = function(arr, target){
+  var arrLen = arr.length;
+  while(arr.length > 2){
+    var testItem = arr.shift();
+    console.log('testItem: ' +testItem+ "---> arr: " +arr);
+    if (findPairs(arr, target - testItem).length > 0){
       console.log('found one trio');
     }
   }
