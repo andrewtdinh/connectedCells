@@ -22,8 +22,8 @@ function processData(input) {
       uncheckedCells.push('' + j + i);
     }
   }
-  function findUncheckedFilledNeighbors(cellLoc){
-    var neighbors = []
+  function findUncountedFilledNeighbors(cellLoc){
+    var qualifiedCells = [];
     var leftBound = cellLoc[0] - 1 >= 0 ? cellLoc[0] - 1 : cellLoc[0];
     var rightBound = cellLoc[0] + 1 < c ? cellLoc[0] + 1 : cellLoc[0];
     var leftBound = cellLoc[1] - 1 >= 0 ? cellLoc[1] - 1 : cellLoc[1];
@@ -31,9 +31,14 @@ function processData(input) {
 
   }
   function expand(cellLoc){
-
+    var currentMax = 0;
+    if (matrix[cellLoc].value )
   }
+
+  //Pass in an array of unchecked cells.  It just walk through the array one at a time.
+  function countIt(arr)
   console.log(matrix);
+  console.log('uncheckedCells: ' + uncheckedCells);
 }
 
 processData(data);
