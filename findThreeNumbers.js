@@ -22,8 +22,7 @@ var findThrees = function(arr, target){
   var endSearch = arr.length - 2;
   while(pointer < endSearch){
     var testItem = arr[pointer];
-    var subArray = arr.slice();
-    subArray.splice(pointer, 1);
+    var subArray = arr.slice(pointer + 1);
     var pairsFound = findPairs(subArray, target - testItem);
     if (pairsFound.length > 0){
       pairsFound.forEach(function(pair){
