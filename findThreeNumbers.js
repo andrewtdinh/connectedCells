@@ -6,7 +6,7 @@ var findPairs = function(arr, target) {
       var qualifiedPairs = [];
       var checkedNumbers = {};
 
-      arr.forEach(function(number){
+      arr.forEach(function(number, index){
         var complement = target - number;
         if (checkedNumbers.hasOwnProperty(complement)){
           qualifiedPairs.push([number, complement]);
@@ -19,7 +19,8 @@ var findPairs = function(arr, target) {
 
 var findThrees = function(arr, target){
   var pointer = 0;
-  while(pointer < arr.length){
+  var endSearch = arr.length - 2;
+  while(pointer < endSearch){
     var testItem = arr[pointer];
     var subArray = arr.slice();
     subArray.splice(pointer, 1);
