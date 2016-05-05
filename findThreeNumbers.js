@@ -6,10 +6,15 @@ var findPairs = function(arr, target) {
       var qualifiedPairs = [];
       var checkedNumbers = {};
 
-      arr.forEach(function(number){
+      arr.forEach(function(number, index){
         var complement = target - number;
-        if (checkedNumbers[complement]){qualifiedPairs.push([number, complement]);}
-        else {checkedNumbers[number] = true;}
+        if (checkedNumbers.hasOwnProperty(complement)){
+          var pair = {};
+          pair[number] = index;
+          pair[complement] = checkedNumbers[complement];
+          qualifiedPairs.push(pair);
+        }
+        else {checkedNumbers[number] = index;}
       });
 
       return qualifiedPairs;
@@ -25,11 +30,12 @@ var findThrees = function(arr, target){
     var pairsFound = findPairs(subArray, target - testItem);
     if (pairsFound.length > 0){
       pairsFound.forEach(function(pair){
+        pair[testItem] = pointer;
         console.log(pair);
       });
       //console.log('Pairs found:  ' +pairsFound);
     }
-    pointer++;
+    ++pointer;
   }
 }
 
