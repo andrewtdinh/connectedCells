@@ -14,10 +14,13 @@ var findPairs = function(arr, target) {
 
       return qualifiedPairs;
     }
-var findThrees = function(arr, target){
-  for(var i=0; i < arr.length; i++){
-    if (findPairs(arr.splice(i, 1), (target - arr[i]))){
-      console.log('found')
+
+var findThrees = function(tArray, target){
+  while(tArray.length > 2){
+    var testItem = tArray.shift();
+    console.log('testItem: ' +testItem+ "---> tArray: " +tArray);
+    if (findPairs(tArray, target - testItem).length > 0){
+      console.log('found one trio');
     }
   }
 }
