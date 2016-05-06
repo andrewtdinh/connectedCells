@@ -31,23 +31,5 @@ var findThrees = function(arr, target){
   }
   return qualifiedTriples;
 }
-// var findThrees = function(arr, target){
-//   var pointer = 0;
-//   var endSearch = arr.length - 2;
-//   var qualifiedTriples = [];
-//   while(pointer < endSearch){
-//     var testItem = arr[pointer];
-//     var subArray = arr.slice(pointer + 1);
-//     var pairsFound = findPairs(subArray, target - testItem);
-//     if (pairsFound.length > 0){
-//       pairsFound.forEach(function(pair){
-//         pair.push(testItem);
-//         qualifiedTriples.push(pair);
-//       });
-//     }
-//     ++pointer;
-//   }
-//   return qualifiedTriples;
-// }
 
 console.log(findThrees(testData, targetNum));
