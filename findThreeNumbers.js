@@ -18,22 +18,36 @@ var findPairs = function(arr, target) {
     }
 
 var findThrees = function(arr, target){
-  var pointer = 0;
-  var endSearch = arr.length - 2;
   var qualifiedTriples = [];
-  while(pointer < endSearch){
-    var testItem = arr[pointer];
-    var subArray = arr.slice(pointer + 1);
-    var pairsFound = findPairs(subArray, target - testItem);
+  for(var i=0; i < arr.length - 2; i++){
+    var subArray = arr.slice(i + 1);
+    var pairsFound = findPairs(subArray, target - arr[i]);
     if (pairsFound.length > 0){
       pairsFound.forEach(function(pair){
-        pair.push(testItem);
+        pair.push(arr[i]);
         qualifiedTriples.push(pair);
       });
     }
-    ++pointer;
   }
   return qualifiedTriples;
 }
+// var findThrees = function(arr, target){
+//   var pointer = 0;
+//   var endSearch = arr.length - 2;
+//   var qualifiedTriples = [];
+//   while(pointer < endSearch){
+//     var testItem = arr[pointer];
+//     var subArray = arr.slice(pointer + 1);
+//     var pairsFound = findPairs(subArray, target - testItem);
+//     if (pairsFound.length > 0){
+//       pairsFound.forEach(function(pair){
+//         pair.push(testItem);
+//         qualifiedTriples.push(pair);
+//       });
+//     }
+//     ++pointer;
+//   }
+//   return qualifiedTriples;
+// }
 
 console.log(findThrees(testData, targetNum));
