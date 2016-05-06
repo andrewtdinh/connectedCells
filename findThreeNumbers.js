@@ -13,13 +13,12 @@ var findPairs = function(arr, target) {
         }
         else {checkedNumbers[number] = index;}
       });
-
       return qualifiedPairs;
     }
 
 var findThrees = function(arr, target){
   var qualifiedTriples = [];
-  for(var i=0; i < arr.length - 2; i++){
+  for (var i=0; i < arr.length - 2; i++){
     var subArray = arr.slice(i + 1);
     var pairsFound = findPairs(subArray, target - arr[i]);
     if (pairsFound.length > 0){
