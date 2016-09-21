@@ -5,5 +5,5 @@ def isPalindrome(aStr):
     return aStr[::-1] == aStr
 
 
-isPalindrome('abc')
-isPalindrome('abccbA')
+print isPalindrome('abc')
+print isPalindrome('abccbA')
