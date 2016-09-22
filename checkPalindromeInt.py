@@ -16,5 +16,6 @@ def intPalindromeCheck(num):
         num /= 10
     return oldNum == newNum
 
-print intPalindromeCheck(24)
+print intPalindromeCheck(242)
+print intPalindromeCheck(1341)
 print intPalindromeCheck(2442)
