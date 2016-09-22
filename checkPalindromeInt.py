@@ -19,3 +19,5 @@ def intPalindromeCheck(num):
 print intPalindromeCheck(242)
 print intPalindromeCheck(1341)
 print intPalindromeCheck(2442)
+print (strPalindromeCheck(24) ==  intPalindromeCheck(242))
+print (strPalindromeCheck(13531) ==  intPalindromeCheck(242))
