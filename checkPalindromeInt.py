@@ -11,7 +11,10 @@ def intPalindromeCheck(num):
     oldNum = num
     newNum = 0
     while num > 0:
-        
+        newNum *= 10
+        newNum += (num % 10)
+        num /= 10
+    return oldNum == newNum
 
 print intPalindromeCheck(24)
 print intPalindromeCheck(2442)
