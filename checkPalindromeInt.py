@@ -7,3 +7,11 @@ def strPalindromeCheck(num):
 
 # print strPalindromeCheck(24)
 # print strPalindromeCheck(242)
+def intPalindromeCheck(num):
+    oldNum = num
+    newNum = 0
+    while num > 0:
+        
+
+print intPalindromeCheck(24)
+print intPalindromeCheck(2442)
