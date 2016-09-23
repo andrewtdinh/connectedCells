@@ -4,14 +4,16 @@ def removeDoubles(s):
     oldString = s
     newString = ''
     while True:
-        # print 'oldString: ' + oldString
+        print 'oldString: ' + oldString
+        print 'newString: ' + newString
         if not newString:
             newString = oldString
         else:
             oldString = newString
         searchLimit = len(newString) - 1
         for ch in newString:
-            indx = newString.index(ch)
+            indx = newString.index(ch)      #This is where a bug is introduced
+            print 'index: ' + str(indx)
             if indx == searchLimit:
                 break
             else:
