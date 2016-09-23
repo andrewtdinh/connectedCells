@@ -4,7 +4,11 @@ def removeDoubles(s):
     oldString = s
     newString = ''
     while newString != oldString:
-        oldString = newString
+        # print 'oldString: ' + oldString
+        if newString:
+            oldString = newString
+        else:
+            newString = oldString
         searchLimit = len(oldString) - 1
         for ch in oldString:
             indx = oldString.index(ch)
@@ -18,6 +22,7 @@ def removeDoubles(s):
                     else:
                         newString = oldString[0:indx] + oldString[(indx + 2):]
                         break
+        print newString
     return newString
 
 
