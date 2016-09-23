@@ -3,26 +3,28 @@
 def removeDoubles(s):
     oldString = s
     newString = ''
-    while newString != oldString:
+    while True:
         # print 'oldString: ' + oldString
-        if newString:
-            oldString = newString
-        else:
+        if not newString:
             newString = oldString
-        searchLimit = len(oldString) - 1
-        for ch in oldString:
-            indx = oldString.index(ch)
+        else:
+            oldString = newString
+        searchLimit = len(newString) - 1
+        for ch in newString:
+            indx = newString.index(ch)
             if indx == searchLimit:
                 break
             else:
-                if ch == oldString[indx + 1]:
+                if ch == newString[indx + 1]:
                     if indx + 2 > searchLimit:
-                        newString = oldString[0:indx]
+                        newString = newString[0:indx]
                         break
                     else:
-                        newString = oldString[0:indx] + oldString[(indx + 2):]
+                        newString = newString[0:indx] + newString[(indx + 2):]
                         break
         print newString
+        if newString == oldString:
+            break
     return newString
 
 
