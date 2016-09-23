@@ -25,12 +25,22 @@
 #This is a smarter method
 def removeDoubles(s):
     newString = s
-    while len(newString) > 1:
-        charSet = set(newString.split(''))
+    while True:
+        oldString = newString
+        charSet = set(''.join(newString.split()))
+        print 'char set: ' +str(charSet)
         for ch in charSet:
+            print 'char: ' + ch
+            print 'char doubled: ' + ch*2
             while ch*2 in newString:
                 indx = newString.find(ch*2)
-                newString = newString[:indx] + 
-
+                if indx + 2 >= len(newString):
+                    newString = newString[:indx]
+                    print 'newString: ' + newString
+                else:
+                    newString = newString[:indx] + newString[(indx + 2):]
+                    print 'newString: ' + newString
+        if oldString == newString:
+            break
 
 print (removeDoubles('aabcdcbffbaa'))
