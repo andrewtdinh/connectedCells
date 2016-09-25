@@ -41,4 +41,4 @@ def removeDoubles(s):
 
 print (removeDoubles('aabcdcbffbaa'))
 print (removeDoubles('aabcddcbffbaa'))
-print (removeDoubles('aabccbffbaa'))
+print (removeDoubles('aabccbffaa'))
