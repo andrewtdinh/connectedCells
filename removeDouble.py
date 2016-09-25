@@ -40,3 +40,5 @@ def removeDoubles(s):
     return newString
 
 print (removeDoubles('aabcdcbffbaa'))
+print (removeDoubles('aabcddcbffbaa'))
+print (removeDoubles('aabccbffbaa'))
